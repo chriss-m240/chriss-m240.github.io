@@ -4,7 +4,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="robots" content="index, follow" />
 	<meta name="googlebot" content="index, follow, noarchive" />
-	<title>Visual Computing Course - Group site - About</title>
+	<title>Visual Computing Course - Group site - D3-Hugo integration task</title>
 	<link rel="icon" href="/" />
 	<meta name="description" content="" />
 
@@ -15,17 +15,13 @@
 	
 
 	<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="About"/>
-<meta name="twitter:description" content="This page is part of the Visual Computing course development, here you will find some of our work through the course.
-What you are visualizing is a page made with Hugo and deployed on GitHub-pages, thanks to their teams for making this page possible.
-Enjoy."/>
+<meta name="twitter:title" content="D3-Hugo integration task"/>
+<meta name="twitter:description" content="Adding some D3 visualizations to Hugo it wouldn&#39;t have been easier."/>
 
-	<meta property="og:title" content="About" />
-<meta property="og:description" content="This page is part of the Visual Computing course development, here you will find some of our work through the course.
-What you are visualizing is a page made with Hugo and deployed on GitHub-pages, thanks to their teams for making this page possible.
-Enjoy." />
+	<meta property="og:title" content="D3-Hugo integration task" />
+<meta property="og:description" content="Adding some D3 visualizations to Hugo it wouldn&#39;t have been easier." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/about/" />
+<meta property="og:url" content="/posts/d3_hugo_integration_task/" />
 
 
 
@@ -73,7 +69,7 @@ Enjoy." />
         </li>
         
         <li class="menu__items__item" aria-label="About">
-            <a href="/about/" class="menu__items__item__link active"
+            <a href="/about/" class="menu__items__item__link "
                 alt="About" role="menuitem">
                 About
             </a>
@@ -116,20 +112,34 @@ Enjoy." />
 
 <article class="post">
     <header class="post__header">
-        <h1 class="post__title">About</h1>
+        <h1 class="post__title">D3-Hugo integration task</h1>
+        
+        <p class="post__subtitle">Adding some D3 visualizations to Hugo it wouldn&#39;t have been easier.</p>
+        
+        
         
         
     </header>
 
     
-    <main class="post__body" style="margin-bottom: 3rem;">
-        <p>This page is part of the Visual Computing course development, here you will find some of our work through the course.</p>
-<p>What you are visualizing is a page made with <a href="https://gohugo.io/">Hugo</a> and deployed on GitHub-pages, thanks to their teams for making this page possible.</p>
-<p>Enjoy.</p>
+    <main class="post__body">
+        <p>Te following task is an example of how to add a D3 chart into the Hugo webpage by writting some JS code into the project. The JS code to this specific visualization can be found in the <strong>/static/js/chart.js</strong> file, where there are some variables and data declared for D3 to properly work and render.</p>
+<p>In the case of the .md files there is only a few lines of HTML, defining the use of D3 via a CDN and referencing the JS script mecioned before.</p>
+<pre><code class="language-htmlmixed=" data-lang="htmlmixed=">&lt;div class=&quot;visualisation&quot;&gt; &lt;/div&gt; 
+&lt;script src = &quot;https://cdnjs.cloudflare.com/ajax/libs/d3/5.15.0/d3.js&quot;&gt;&lt;/script&gt;
+&lt;script src = &quot;/js/chart.js&quot;&gt;&lt;/script&gt; 
+</code></pre><div class="visualisation"> </div> <!-- Hugo supports html in markdown -->
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/d3/5.15.0/d3.js"></script> <!-- load d3.js from CDN. you could potentially load it from /static folder as well-->
+<script src = "/js/chart.js"></script> <!-- load d3.js from CDN. you could potentially load it from /static folder as well-->
 
     </main>
     
 
+    
+    <footer class="post__footer">
+        
+
+    </footer>
     
 </article>
 <footer class="footer">
