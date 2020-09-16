@@ -5,18 +5,13 @@
     <link>/</link>
     <description>Recent content in Home on Visual Computing Course - Group site</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 17 Dec 2018 22:21:42 +0100</lastBuildDate>
-    
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Group Members</title>
-      <link>/sections/simple-example/</link>
+      <link>/sections/group_members/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/sections/simple-example/</guid>
+      <guid>/sections/group_members/</guid>
       <description>Cristian Alejandro Mantilla Duque Juan Jesus Pulido Sanchez Juan David Barragan </description>
     </item>
     
@@ -26,16 +21,38 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/about/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Felis donec et odio pellentesque diam. Sapien nec sagittis aliquam malesuada bibendum. Velit dignissim sodales ut eu sem integer vitae justo. Vulputate sapien nec sagittis aliquam malesuada bibendum. Eu ultrices vitae auctor eu augue ut. Amet mattis vulputate enim nulla aliquet porttitor lacus luctus. Mauris in aliquam sem fringilla. Sed faucibus turpis in eu mi bibendum.</description>
+      <description>This page is part of the Visual Computing course development, here you will find some of our work through the course.
+What you are visualizing is a page made with Hugo and deployed on GitHub-pages, thanks to their teams for making this page possible.
+Enjoy.</description>
     </item>
     
     <item>
-      <title>This is just an example of a post</title>
-      <link>/posts/post-example/</link>
-      <pubDate>Mon, 17 Dec 2018 22:21:42 +0100</pubDate>
+      <title>D3-Hugo integration task</title>
+      <link>/posts/d3_hugo_integration_task/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/post-example/</guid>
-      <description>5 ways country song ringtones can make you rich. Why country music festivals will change your life. The unconventional guide to music notes. Why our world would end if music videos disappeared. 8 insane (but true) things about top country songs. How twitter can teach you about popular songs. 13 facts about latin music videos that&amp;rsquo;ll keep you up at night. Why do people think free dances are a good idea?</description>
+      <guid>/posts/d3_hugo_integration_task/</guid>
+      <description>Te following task is an example of how to add a D3 chart into the Hugo webpage by writting some JS code into the project. The JS code to this specific visualization can be found in the /static/js/chart.js file, where there are some variables and data declared for D3 to properly work and render.
+In the case of the .md files there is only a few lines of HTML, defining the use of D3 via a CDN and referencing the JS script mecioned before.</description>
+    </item>
+    
+    <item>
+      <title>P5 convolution example</title>
+      <link>/posts/p5_convolution_example/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/p5_convolution_example/</guid>
+      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi a ex non ipsum rutrum faucibus in ut orci. Vestibulum vel orci orci. Curabitur vitae risus tincidunt, tristique neque at, dignissim arcu. Morbi euismod mollis lacus sed sagittis. Morbi lacinia pharetra felis, sit amet porttitor nunc iaculis non. Donec bibendum maximus dui eu facilisis. Donec ultrices placerat urna a convallis. Nunc et ipsum luctus, consequat sem a, pulvinar felis. Integer posuere tincidunt urna, at fermentum nulla accumsan quis.</description>
+    </item>
+    
+    <item>
+      <title>P5 optical illusion example</title>
+      <link>/posts/p5_optical_illusion_example/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/p5_optical_illusion_example/</guid>
+      <description>The following illusion is called Café Wall, it consists of simple elements as it is some black and white squares displayed inside parallel rows tricking our eyes to see not parallel rows as it actually is but evidencing a few slopped squares especially at the ends or sides of the rows. Here is part of the code used to make this visualization:
+function draw() { groutWidth = 139 / 25; background(&#39;#444444*2&#39;); numRows = ceil(1000 / (sqWidth)) + 1; for (let i = 0; i &amp;lt; numRows; i = i + 1) { line(0, i * sqWidth, 480, i * sqWidth); drawRow(i); } }  </description>
     </item>
     
   </channel>

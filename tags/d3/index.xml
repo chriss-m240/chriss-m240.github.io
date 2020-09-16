@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>D3 on Visual Computing Course - Group site</title>
+    <link>/tags/d3/</link>
+    <description>Recent content in D3 on Visual Computing Course - Group site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/tags/d3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>D3-Hugo integration task</title>
+      <link>/posts/d3_hugo_integration_task/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/d3_hugo_integration_task/</guid>
+      <description>Te following task is an example of how to add a D3 chart into the Hugo webpage by writting some JS code into the project. The JS code to this specific visualization can be found in the /static/js/chart.js file, where there are some variables and data declared for D3 to properly work and render.
+In the case of the .md files there is only a few lines of HTML, defining the use of D3 via a CDN and referencing the JS script mecioned before.</description>
+    </item>
+    
+  </channel>
+</rss>
