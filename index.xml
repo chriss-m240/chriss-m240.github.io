@@ -37,12 +37,12 @@ In the case of the .md files there is only a few lines of HTML, defining the use
     </item>
     
     <item>
-      <title>P5 convolution example</title>
+      <title>Lab 1, task 2. P5 - Convolution masks</title>
       <link>/posts/p5_convolution_example/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/posts/p5_convolution_example/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi a ex non ipsum rutrum faucibus in ut orci. Vestibulum vel orci orci. Curabitur vitae risus tincidunt, tristique neque at, dignissim arcu. Morbi euismod mollis lacus sed sagittis. Morbi lacinia pharetra felis, sit amet porttitor nunc iaculis non. Donec bibendum maximus dui eu facilisis. Donec ultrices placerat urna a convallis. Nunc et ipsum luctus, consequat sem a, pulvinar felis. Integer posuere tincidunt urna, at fermentum nulla accumsan quis.</description>
+      <description>Let&#39;s start understanding a little bit about convolutional masks, also known as kernels. It&#39;s a concept normally used in visual computing because it refers to a matrix where some values are defined to achieve certain effect over images or videos. The most common convolutional mask is the blur kernel used to soften an image and create a foggy or a fade effect, here it is what is know as a box blur kernel, characteristic because it defines that the color for a pixel is the arithmetic mean of its neighboring pixels.</description>
     </item>
     
     <item>
@@ -52,7 +52,7 @@ In the case of the .md files there is only a few lines of HTML, defining the use
       
       <guid>/posts/p5_optical_illusion_example/</guid>
       <description>The following illusion is called Café Wall, it consists of simple elements as it is some black and white squares displayed inside parallel rows tricking our eyes to see not parallel rows as it actually is but evidencing a few slopped squares especially at the ends or sides of the rows. Here is part of the code used to make this visualization:
-function draw() { groutWidth = 139 / 25; background(&#39;#444444*2&#39;); numRows = ceil(1000 / (sqWidth)) + 1; for (let i = 0; i &amp;lt; numRows; i = i + 1) { line(0, i * sqWidth, 480, i * sqWidth); drawRow(i); } }  </description>
+function draw() { groutWidth = 139 / 25; background(&#39;#444444*2&#39;); numRows = ceil(1000 / (sqWidth)) + 1; for (let i = 0; i &amp;lt; numRows; i = i + 1) { line(0, i * sqWidth, 480, i * sqWidth); drawRow(i); } }    The following illusion is called Café Wall, it consists of simple elements as it is some black and white squares displayed inside parallel rows tricking our eyes to see not parallel rows as it actually is but evidencing a few slopped squares especially at the ends or sides of the rows.</description>
     </item>
     
   </channel>

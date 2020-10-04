@@ -133,9 +133,23 @@
     drawRow(i);
   }
 }
-</code></pre><link rel="stylesheet" href="style.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js" type="text/javascript"></script>
-<script src="/js/cafeWall.js" type="text/javascript"></script>
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+<div id="cafeWall"> </div>
+<p>The following illusion is called <strong>Café Wall</strong>, it consists of simple elements as it is some black and white squares displayed inside parallel rows tricking our eyes to see not parallel rows as it actually is but evidencing a few slopped squares especially at the ends or sides of the rows. Here is part of the code used to make this visualization:</p>
+<pre><code class="language-javascript=" data-lang="javascript=">function draw() {
+  groutWidth = 139 / 25;
+  background('#444444*2');
+  numRows = ceil(1000 / (sqWidth)) + 1;
+  for (let i = 0; i &lt; numRows; i = i + 1) {
+    line(0, i * sqWidth, 480, i * sqWidth);
+    drawRow(i);
+  }
+}
+</code></pre><div id="penroseTriangle"> </div>
+<div id="circleMovements"> </div>
+<div id="mullerLyer"> </div>
+
     </main>
     
 
@@ -147,26 +161,25 @@
     
 </article>
 <footer class="footer">
-    
+  
 
-    <address class="footer__contact">
-        
+  <address class="footer__contact">
+      
 
-        
+      
 
-        
+      
 
-        
-    </address>
+      
+  </address>
 
-    <div class="copy">
-        
-        <p>© 2020 - Visual Computing Course - Group site</p>
-        
-    </div>
+  <div class="copy">
+      
+      <p>© 2020 - Visual Computing Course - Group site</p>
+      
+  </div>
 
-    
-
+  
 
 
 
@@ -187,6 +200,7 @@
 ></script>
 
 
+  
 </footer></body>
 
 </html>
