@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="robots" content="index, follow" />
+	<meta name="googlebot" content="index, follow, noarchive" />
+	<title>Visual Computing Course - Group site - Lab 1, task 1. P5 - Grayscale RGB &amp; Luma</title>
+	<link rel="icon" href="/" />
+	<meta name="description" content="" />
+
+	
+
+	<meta name="generator" content="Hugo 0.75.1" />
+
+	
+
+	<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Lab 1, task 1. P5 - Grayscale RGB &amp; Luma"/>
+<meta name="twitter:description" content="Transforming images with color into black and white images"/>
+
+	<meta property="og:title" content="Lab 1, task 1. P5 - Grayscale RGB &amp; Luma" />
+<meta property="og:description" content="Transforming images with color into black and white images" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/p5_gray_scale/" />
+
+
+
+	<meta property="og:locale" content="en" />
+	
+
+	
+	
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/bundle.min.css">
+</head>
+<body><header class="header ">
+    <div class="header__title">
+        <a href="/" class="header__title__link" alt="Home">
+            
+            Visual Computing Course - Group site
+            
+        </a>
+    </div>
+
+    <nav class="menu" aria-label="menu">
+    <ul class="menu__items" aria-label="menu">
+        
+        
+        <li class="menu__items__item" aria-label="Home">
+            <a href="/" class="menu__items__item__link "
+                alt="Home" role="menuitem">
+                Home
+            </a>
+        </li>
+        
+        <li class="menu__items__item" aria-label="Posts">
+            <a href="/posts/" class="menu__items__item__link "
+                alt="Posts" role="menuitem">
+                Posts
+            </a>
+        </li>
+        
+        <li class="menu__items__item" aria-label="About">
+            <a href="/about/" class="menu__items__item__link "
+                alt="About" role="menuitem">
+                About
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+    <nav class="hamburger-menu" aria-label="mobile-menu">
+    <div class="toggle">
+        <input type="checkbox" class="hamburger__toggle" id="hamburgerToggle" name="hamburger toggle" aria-label="Hamburguer menu">
+        <label class="hamburger__toggle__icon" for="hamburgerToggle">
+            <i class="fas fa-bars"></i>
+        </label>
+
+        <ul class="hamburger__items" aria-label="mobile-menu">
+            
+            <li class="hamburger__items__item" aria-label="Home">
+                <a href="/" class="hamburger__items__item__link" alt="Home" role="menuitem">
+                    Home
+                </a>
+            </li>
+            
+            <li class="hamburger__items__item" aria-label="Posts">
+                <a href="/posts/" class="hamburger__items__item__link" alt="Posts" role="menuitem">
+                    Posts
+                </a>
+            </li>
+            
+            <li class="hamburger__items__item" aria-label="About">
+                <a href="/about/" class="hamburger__items__item__link" alt="About" role="menuitem">
+                    About
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</nav>
+    
+</header>
+
+<article class="post">
+    <header class="post__header">
+        <h1 class="post__title">Lab 1, task 1. P5 - Grayscale RGB &amp; Luma</h1>
+        
+        <p class="post__subtitle">Transforming images with color into black and white images</p>
+        
+        
+        
+        
+    </header>
+
+    
+    <main class="post__body">
+        <div>
+The first image is the original colorfull image which we are going to transform into black and white images with the following tehcniques.
+<h3 id="arithmetic-mean"><strong>Arithmetic mean</strong></h3>
+<p>This metod is just the  i.e. average, of the three components, in the HSI model called intensity (fig. a). This is simply the projection of a point onto the neutral axis—the vertical height of a point in our tilted cube. The advantage is that, together with Euclidean-distance calculations of hue and chroma, this representation preserves distances and angles from the geometry of the RGB cube.</p>
+<div class="row">
+    <div class="centered_div">
+        <img class="special-img-class" src="/images/avg.png" />     
+    </div>
+    <div class="centered_div">
+        <p>Equation</p>
+        <img class="special-img-class" src="/images/avg_for.png" />     
+    </div>
+</div>
+<h3 id="luma"><strong>Luma</strong></h3>
+<p>A more perceptually relevant alternative is to use luma, Y′, as a lightness dimension (fig d). Luma is the weighted average of gamma-corrected R, G, and B, based on their contribution to perceived lightness, long used as the monochromatic dimension in color television broadcast. For sRGB, the Rec. 709 primaries yield Y′709 (standardizes the format of high-definition television, having 16:9 (widescreen) aspect ratio. ), digital NTSC uses Y′601 according to Rec. 601 and some other primaries are also in use which result in different coefficients.</p>
+<div class="row">
+    <div class="centered_div">
+        <img class="special-img-class" src="/images/luma.png" />     
+    </div>
+    <div class="centered_div">
+        <p>Equation</p>
+        <img class="special-img-class" src="/images/luma_for.png" />     
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js" type="text/javascript"></script>
+<div class="row">
+    <div class="centered_div" style="padding-top: 7px" id="canvasI">
+            <script src="/js/bw.js" type="text/javascript"></script>     
+        </div>
+</div>   
+</div>
+<style>
+
+.row {
+    display: flex;
+}
+
+.centered_div {
+    margin:center
+}
+
+#dropdown {
+    text-align: center;
+}
+
+#source_img {
+    width:319px;
+    height: 359px; 
+}
+
+</style><blockquote>
+</blockquote>
+
+    </main>
+    
+
+    
+    <footer class="post__footer">
+        
+
+    </footer>
+    
+</article>
+<footer class="footer">
+  
+
+  <address class="footer__contact">
+      
+
+      
+
+      
+
+      
+  </address>
+
+  <div class="copy">
+      
+      <p>© 2020 - Visual Computing Course - Group site</p>
+      
+  </div>
+
+  
+
+
+
+
+<script src="/js/bundle.min.243a483d5297388ef2f4a1b2d5e5d30218e01e8a2dfe213a376ea24d130837c860762a23e9daaa68ae3a7bcd5a3869287a14dc3b738f10486cf4e8fb4291b478.js"></script>
+
+
+
+
+
+
+
+<script
+	defer
+	src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5&#43;&#43;eIfzYmTgBBmXYdhvxPc&#43;XcFEk&#43;zJwDgWbP"
+	crossorigin="anonymous"
+></script>
+
+
+  
+</footer></body>
+
+</html>

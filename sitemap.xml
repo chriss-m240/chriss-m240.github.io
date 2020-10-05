@@ -39,7 +39,19 @@
   </url>
   
   <url>
+    <loc>/posts/p5_gray_scale/</loc>
+  </url>
+  
+  <url>
     <loc>/posts/p5_convolution_example/</loc>
+  </url>
+  
+  <url>
+    <loc>/posts/p5_histogram_segmentation/</loc>
+  </url>
+  
+  <url>
+    <loc>/posts/p5_video_analysis/</loc>
   </url>
   
   <url>

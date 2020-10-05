@@ -7,12 +7,40 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="/tags/p5/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Lab 1, task 1. P5 - Grayscale RGB &amp; Luma</title>
+      <link>/posts/p5_gray_scale/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/p5_gray_scale/</guid>
+      <description>The first image is the original colorfull image which we are going to transform into black and white images with the following tehcniques. Arithmetic mean This metod is just the i.e. average, of the three components, in the HSI model called intensity (fig. a). This is simply the projection of a point onto the neutral axis—the vertical height of a point in our tilted cube. The advantage is that, together with Euclidean-distance calculations of hue and chroma, this representation preserves distances and angles from the geometry of the RGB cube.</description>
+    </item>
+    
+    <item>
       <title>Lab 1, task 2. P5 - Convolution masks</title>
       <link>/posts/p5_convolution_example/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/posts/p5_convolution_example/</guid>
       <description>Let&#39;s start understanding a little bit about convolutional masks, also known as kernels. It&#39;s a concept normally used in visual computing because it refers to a matrix where some values are defined to achieve certain effect over images or videos. The most common convolutional mask is the blur kernel used to soften an image and create a foggy or a fade effect, here it is what is know as a box blur kernel, characteristic because it defines that the color for a pixel is the arithmetic mean of its neighboring pixels.</description>
+    </item>
+    
+    <item>
+      <title>Lab 1, task 3. P5 - Image Histogram and Segmentation</title>
+      <link>/posts/p5_histogram_segmentation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/p5_histogram_segmentation/</guid>
+      <description>Image Histograms Image histograms visually summarize the distribution of a continuous numeric variable by measuring the frequency at which certain values appear in the image. The x-axis in the image histogram is a number line that displays the range of image pixel values that has been split into number ranges, or bins. A bar is drawn for each bin, and the width of the bar represents the density number range of the bin; the height of the bar represents the number of pixels that fall into that range.</description>
+    </item>
+    
+    <item>
+      <title>Lab 1, task 4. P5 - Video analysis</title>
+      <link>/posts/p5_video_analysis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/p5_video_analysis/</guid>
+      <description>At first we tried to run the convolutional masks on a video at software level, unfortunaly there was no possible to execute it because the resources given by the browser to the page were not enough to support the complete processing of the video, returning as and error the following.
+With that is notorius that running convolutional mask on a software level is no efficient and it takes several computational resources to compute it.</description>
     </item>
     
     <item>
