@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="robots" content="index, follow" />
+	<meta name="googlebot" content="index, follow, noarchive" />
+	<title>Visual Computing Course - Group site - Lab 1, task 3. P5 - Image Histogram and Segmentation</title>
+	<link rel="icon" href="/" />
+	<meta name="description" content="" />
+
+	
+
+	<meta name="generator" content="Hugo 0.75.1" />
+
+	
+
+	<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Lab 1, task 3. P5 - Image Histogram and Segmentation"/>
+<meta name="twitter:description" content="Here is presented the solution for the third task given in the first laboratory statement  "/>
+
+	<meta property="og:title" content="Lab 1, task 3. P5 - Image Histogram and Segmentation" />
+<meta property="og:description" content="Here is presented the solution for the third task given in the first laboratory statement  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/p5_histogram_segmentation_example/" />
+
+
+
+	<meta property="og:locale" content="en" />
+	
+
+	
+	
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/bundle.min.css">
+</head>
+<body><header class="header ">
+    <div class="header__title">
+        <a href="/" class="header__title__link" alt="Home">
+            
+            Visual Computing Course - Group site
+            
+        </a>
+    </div>
+
+    <nav class="menu" aria-label="menu">
+    <ul class="menu__items" aria-label="menu">
+        
+        
+        <li class="menu__items__item" aria-label="Home">
+            <a href="/" class="menu__items__item__link "
+                alt="Home" role="menuitem">
+                Home
+            </a>
+        </li>
+        
+        <li class="menu__items__item" aria-label="Posts">
+            <a href="/posts/" class="menu__items__item__link "
+                alt="Posts" role="menuitem">
+                Posts
+            </a>
+        </li>
+        
+        <li class="menu__items__item" aria-label="About">
+            <a href="/about/" class="menu__items__item__link "
+                alt="About" role="menuitem">
+                About
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+    <nav class="hamburger-menu" aria-label="mobile-menu">
+    <div class="toggle">
+        <input type="checkbox" class="hamburger__toggle" id="hamburgerToggle" name="hamburger toggle" aria-label="Hamburguer menu">
+        <label class="hamburger__toggle__icon" for="hamburgerToggle">
+            <i class="fas fa-bars"></i>
+        </label>
+
+        <ul class="hamburger__items" aria-label="mobile-menu">
+            
+            <li class="hamburger__items__item" aria-label="Home">
+                <a href="/" class="hamburger__items__item__link" alt="Home" role="menuitem">
+                    Home
+                </a>
+            </li>
+            
+            <li class="hamburger__items__item" aria-label="Posts">
+                <a href="/posts/" class="hamburger__items__item__link" alt="Posts" role="menuitem">
+                    Posts
+                </a>
+            </li>
+            
+            <li class="hamburger__items__item" aria-label="About">
+                <a href="/about/" class="hamburger__items__item__link" alt="About" role="menuitem">
+                    About
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</nav>
+    
+</header>
+
+<article class="post">
+    <header class="post__header">
+        <h1 class="post__title">Lab 1, task 3. P5 - Image Histogram and Segmentation</h1>
+        
+        <p class="post__subtitle">Here is presented the solution for the third task given in the first laboratory statement  </p>
+        
+        
+        
+        
+    </header>
+
+    
+    <main class="post__body">
+        <h2 id="image-histograms">Image Histograms</h2>
+<p>Image histograms visually summarize the <strong>distribution</strong> of a continuous numeric variable by measuring the frequency at which certain values appear in the image. The x-axis in the image histogram is a <strong>number line</strong> that displays the range of image pixel values that has been split into number ranges, or bins. A bar is drawn for each bin, and the width of the bar represents the density number range of the bin; the height of the bar represents the number of pixels that fall into that range.</p>
+<p><img src="https://pro-cdn.pixelmator.com/tutorials/guides/understanding-histograms/image-understanding_histograms@2x.jpg" alt=""></p>
+<p>In the following example, as we know that a pixel can take a value between 0 and 255, thar range of values were took for the bins (1 bin = 1 value between 0-255), furthermore was splited in 3 histograms, one per each color dimension.</p>
+<h2 id="image-segmentation">Image Segmentation</h2>
+<p>It is the process of dividing an image into different regions based on the characteristics of pixels to identify objects or boundaries to simplify an image and more efficiently analyze it. Segmentation impacts a number of domains, from the filmmaking industry to the field of medicine. For instance, the software behind green screens implements image segmentation to crop out the foreground and place it on a background for scenes that cannot be shot or would be dangerous to shoot in real life. Image segmentation is also used to track objects in a sequence of images and to classify terrains, like petroleum reserves, in satellite images. Some medical applications of segmentation include the identification of injured muscle, the measurement of bone and tissue, and the detection of suspicious structures to aid radiologists (Computer Aided Diagnosis, or CAD).</p>
+<p><img src="https://es.mathworks.com/discovery/image-segmentation/_jcr_content/mainParsys3/discoverysubsection/mainParsys3/image_629538353.adapt.480.high.jpg/1588786618532.jpg" alt=""></p>
+<h3 id="sana-twice-example">Sana Twice Example</h3>
+<p>In this interactive example of segmentation using several histograms, on per color channel in RGB colorMode, using sliders you can modify the window range to segment in th histograms, and placing a number between 0 and 255 in the text boxes you will take the control of the size of the windows use it in the segmentation.</p>
+<div class="row">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js" type="text/javascript"></script>
+	<div class="centered_div" style="padding-top: 7px" id="canvasI">
+		<script src="/js/segmentation_hist.js" type="text/javascript"></script>   
+	</div>
+</div>
+<p>feel free to test several windows and ranges, for example: Red Channel in 60, Green Channel in 180 and Blue Channel in 20 you will see an alien 사나.</p>
+<h2 id="how-to-do-it">How to do it?</h2>
+<p>As you can access to pixels in a loaded image as the following:</p>
+<p><img src="https://lh3.googleusercontent.com/6a3xoXOT6ZSsvn0HqWaC-2hcS5d6TrZ9DhNq8ZADFHJjXVbP_kMb0wYKFTyD3plD1yGxxwBLNSLgpt9vMFrGCWpRZJK9q3r6XS9Jyz19WJlkL-AXbr4=w773" alt=""></p>
+<p>with the following code you will iterate it and take control over every channel:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">  <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">loadPixels</span>();
+  <span style="color:#66d9ef">for</span>(<span style="color:#a6e22e">x</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;<span style="color:#a6e22e">x</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">width</span>;<span style="color:#a6e22e">x</span><span style="color:#f92672">++</span>)
+    <span style="color:#66d9ef">for</span>(<span style="color:#a6e22e">y</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;<span style="color:#a6e22e">y</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">height</span>;<span style="color:#a6e22e">y</span><span style="color:#f92672">++</span>) {      
+      <span style="color:#a6e22e">pos</span><span style="color:#f92672">=</span><span style="color:#ae81ff">4</span><span style="color:#f92672">*</span>(<span style="color:#a6e22e">y</span><span style="color:#f92672">*</span><span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">width</span><span style="color:#f92672">+</span><span style="color:#a6e22e">x</span>);
+      <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">pixels</span>[<span style="color:#a6e22e">pos</span>] <span style="color:#75715e">// R value
+</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">pixels</span>[<span style="color:#a6e22e">pos</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#75715e">// G value
+</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">pixels</span>[<span style="color:#a6e22e">pos</span><span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>] <span style="color:#75715e">// B value
+</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">pixels</span>[<span style="color:#a6e22e">pos</span><span style="color:#f92672">+</span><span style="color:#ae81ff">3</span>] <span style="color:#75715e">// A value
+</span><span style="color:#75715e"></span>  }
+  <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">updatePixels</span>();
+</code></pre></div><p>and updating the pixels in the image you can segment it for every channel.</p>
+<style>
+
+.row {
+    display: flex;
+}
+
+.centered_div {
+    margin:auto
+}
+
+#dropdown {
+    text-align: center;
+}
+
+#source_img {
+    width:319px;
+    height: 359px; 
+}
+
+</style><blockquote>
+</blockquote>
+
+    </main>
+    
+
+    
+    <footer class="post__footer">
+        
+
+    </footer>
+    
+</article>
+<footer class="footer">
+  
+
+  <address class="footer__contact">
+      
+
+      
+
+      
+
+      
+  </address>
+
+  <div class="copy">
+      
+      <p>© 2020 - Visual Computing Course - Group site</p>
+      
+  </div>
+
+  
+
+
+
+
+<script src="/js/bundle.min.243a483d5297388ef2f4a1b2d5e5d30218e01e8a2dfe213a376ea24d130837c860762a23e9daaa68ae3a7bcd5a3869287a14dc3b738f10486cf4e8fb4291b478.js"></script>
+
+
+
+
+
+
+
+<script
+	defer
+	src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5&#43;&#43;eIfzYmTgBBmXYdhvxPc&#43;XcFEk&#43;zJwDgWbP"
+	crossorigin="anonymous"
+></script>
+
+
+  
+</footer></body>
+
+</html>

@@ -46,13 +46,12 @@ In the case of the .md files there is only a few lines of HTML, defining the use
     </item>
     
     <item>
-      <title>P5 optical illusion example</title>
-      <link>/posts/p5_optical_illusion_example/</link>
+      <title>Lab 1, task 3. P5 - Image Histogram and Segmentation</title>
+      <link>/posts/p5_histogram_segmentation_example/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/p5_optical_illusion_example/</guid>
-      <description>The following illusion is called Café Wall, it consists of simple elements as it is some black and white squares displayed inside parallel rows tricking our eyes to see not parallel rows as it actually is but evidencing a few slopped squares especially at the ends or sides of the rows. Here is part of the code used to make this visualization:
-function draw() { groutWidth = 139 / 25; background(&#39;#444444*2&#39;); numRows = ceil(1000 / (sqWidth)) + 1; for (let i = 0; i &amp;lt; numRows; i = i + 1) { line(0, i * sqWidth, 480, i * sqWidth); drawRow(i); } }    The following illusion is called Café Wall, it consists of simple elements as it is some black and white squares displayed inside parallel rows tricking our eyes to see not parallel rows as it actually is but evidencing a few slopped squares especially at the ends or sides of the rows.</description>
+      <guid>/posts/p5_histogram_segmentation_example/</guid>
+      <description>Image Histograms Image histograms visually summarize the distribution of a continuous numeric variable by measuring the frequency at which certain values appear in the image. The x-axis in the image histogram is a number line that displays the range of image pixel values that has been split into number ranges, or bins. A bar is drawn for each bin, and the width of the bar represents the density number range of the bin; the height of the bar represents the number of pixels that fall into that range.</description>
     </item>
     
   </channel>
