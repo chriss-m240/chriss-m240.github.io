@@ -4,22 +4,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="robots" content="index, follow" />
 	<meta name="googlebot" content="index, follow, noarchive" />
-	<title>Visual Computing Course - Group site - P5 optical illusion example</title>
+	<title>Visual Computing Course - Group site - Lab 2, Optical Illusions</title>
 	<link rel="icon" href="/" />
 	<meta name="description" content="" />
 
 	
 
-	<meta name="generator" content="Hugo 0.75.1" />
+	<meta name="generator" content="Hugo 0.77.0" />
 
 	
 
 	<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="P5 optical illusion example"/>
-<meta name="twitter:description" content="P5 may trick you with some illusions, here is an example"/>
+<meta name="twitter:title" content="Lab 2, Optical Illusions"/>
+<meta name="twitter:description" content="P5 may trick you with some illusions, here are some examples"/>
 
-	<meta property="og:title" content="P5 optical illusion example" />
-<meta property="og:description" content="P5 may trick you with some illusions, here is an example" />
+	<meta property="og:title" content="Lab 2, Optical Illusions" />
+<meta property="og:description" content="P5 may trick you with some illusions, here are some examples" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/p5_optical_illusion_example/" />
 
@@ -112,9 +112,9 @@
 
 <article class="post">
     <header class="post__header">
-        <h1 class="post__title">P5 optical illusion example</h1>
+        <h1 class="post__title">Lab 2, Optical Illusions</h1>
         
-        <p class="post__subtitle">P5 may trick you with some illusions, here is an example</p>
+        <p class="post__subtitle">P5 may trick you with some illusions, here are some examples</p>
         
         
         
@@ -123,7 +123,19 @@
 
     
     <main class="post__body">
-        <p>The following illusion is called <strong>Café Wall</strong>, it consists of simple elements as it is some black and white squares displayed inside parallel rows tricking our eyes to see not parallel rows as it actually is but evidencing a few slopped squares especially at the ends or sides of the rows. Here is part of the code used to make this visualization:</p>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js" type="text/javascript"></script>
+<!-- <script src="/js/main.js" type="text/javascript"></script> -->
+<script src="/js/illusions/cafeWall.js" type="text/javascript"></script>
+<script src="/js/illusions/penroseTriangle.js" type="text/javascript"></script>
+<script src="/js/illusions/mullerLyer.js" type="text/javascript"></script>
+<script src="/js/illusions/movingCars.js" type="text/javascript"></script>
+<script src="/js/illusions/circleSize.js" type="text/javascript"></script>
+<script src="/js/illusions/ponzoLines.js" type="text/javascript"></script>
+<script src="/js/illusions/movingSquare.js" type="text/javascript"></script>
+<script src="/js/illusions/mobiusStrip.js" type="text/javascript"></script>
+<h2 id="geometric-and-paradox"><strong>Geometric and paradox</strong></h2>
+<h3 id="cafe-wall">Cafe Wall</h3>
+<p>First we have the following illusion is called <strong>Café Wall</strong>, it i classified as a geometric illusion and it consists of simple elements as it is some black and white squares displayed inside parallel rows tricking our eyes to see not parallel rows as it actually is but evidencing a few slopped squares especially at the ends or sides of the rows. Here is part of the code used to make this visualization:</p>
 <pre><code class="language-javascript=" data-lang="javascript=">function draw() {
   groutWidth = 139 / 25;
   background('#444444*2');
@@ -133,22 +145,38 @@
     drawRow(i);
   }
 }
-</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+</code></pre><p><strong>To interact with the ilussion please move the mouse on the X-axis to visualize some changes making the illusion more profound or mild according to the movement:</strong></p>
 <div id="cafeWall"> </div>
-<p>The following illusion is called <strong>Café Wall</strong>, it consists of simple elements as it is some black and white squares displayed inside parallel rows tricking our eyes to see not parallel rows as it actually is but evidencing a few slopped squares especially at the ends or sides of the rows. Here is part of the code used to make this visualization:</p>
-<pre><code class="language-javascript=" data-lang="javascript=">function draw() {
-  groutWidth = 139 / 25;
-  background('#444444*2');
-  numRows = ceil(1000 / (sqWidth)) + 1;
-  for (let i = 0; i &lt; numRows; i = i + 1) {
-    line(0, i * sqWidth, 480, i * sqWidth);
-    drawRow(i);
-  }
-}
-</code></pre><div id="penroseTriangle"> </div>
-<div id="circleMovements"> </div>
+<h3 id="mobius-strip">Mobius Strip</h3>
+<p>Next it is presented what is called a Mobius Strip,  one of the simplest optical illusions. It&rsquo;s also one of the most mystifying. What results is a simple strip that only has one edge and one surface. There is no discernible &ldquo;front&rdquo; or &ldquo;back&rdquo; side.</p>
+<div id="mobiusStrip"> </div>
+<h3 id="penrose-triangle">Penrose Triangle</h3>
+<p>Last in this category is that is called a Penrose Triangle. Part of the paradox illusion because are generated by objects that are paradoxical or impossible in &ldquo;real life&rdquo; or three dimensions, but look oddly convincing and perplexing in two dimensional drawings. Such illusions are often dependent on a cognitive misunderstanding that adjacent edges must join.</p>
+<p><strong>Here we have a 3D example, plese feel free to play around moving the triangle to achieve the ilusion and undersatnd how is done.</strong></p>
+<div id="penroseTriangle"> </div>
+<h2 id="size-perception"><strong>Size perception</strong></h2>
+<p>Into another type of illusion we hace the ones that trick our brains into thinking that atrbittues like size acording to perspective can be concieve like different.</p>
+<p>Here are listed some of the most common illusions:</p>
+<h3 id="muller-lyer">Muller Lyer</h3>
+<p>Here are presented two lines with two colored segments green and yellow. On the right side there are some moving marks that turn the lines into styled arrows changing the perception of size.</p>
 <div id="mullerLyer"> </div>
+<h3 id="ebbinghaus-illusion">Ebbinghaus Illusion</h3>
+<p>Is an optical illusion of relative size perception. Two circles of identical size are placed near to each other, and one is surrounded by large circles while the other is surrounded by small circles</p>
+<p>C*8lick over the canvas to hide the blue circles and see that the red circles are the same size**</p>
+<div id="circleSize"> </div>
+<h3 id="ponzo-illusion">Ponzo Illusion</h3>
+<p>Lastly there is another simple illusion but a tricky one, this one is calle Ponzo illusion designed by the italian Marion Ponzo he suggested that the human mind judges an object&rsquo;s size based on its background. He showed this by drawing two identical lines across a pair of converging lines, similar to railway tracks. The upper line looks longer because we interpret the converging sides according to linear perspective as parallel lines receding into the distance.</p>
+<p>This illusion is also part of the geometric illusion family. <strong>To check the size of the yellow lines please move the mouse to get the lines closer</strong></p>
+<div id="lines"> </div>
+<h2 id="motion-perception"><strong>Motion Perception</strong></h2>
+<h3 id="stepping-feet">Stepping feet</h3>
+<p>Two &ldquo;buses,&rdquo; one blue and one yellow, moving horizontally across a &ldquo;street&rdquo; consisting of black and white stripes. Although both of the buses move at a constant speed, their perceived speed varies dramatically.</p>
+<p><strong>To reveal that they are moving at the same speed head to head please click on the canvas and hold it to clear the black and white bars.</strong></p>
+<div id="movingCars"> </div>
+<h3 id="breathing-square">Breathing Square</h3>
+<p>This illusion is one of several effects in which a rigid object is shown moving behind small apertures. The object appears to change size or shape as it moves. In this case the apertures become progressively narrower and wider as a square rotates behind them, and the square appears to expand and contract rhythmically</p>
+<p><strong>Click on the canvas to hide the yellow square and reveal the true movement of the green square</strong></p>
+<div id="movingSquare"> </div>
 
     </main>
     

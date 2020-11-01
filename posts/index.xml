@@ -54,13 +54,12 @@ With that is notorius that running convolutional mask on a software level is no 
     </item>
     
     <item>
-      <title>P5 optical illusion example</title>
+      <title>Lab 2, Optical Illusions</title>
       <link>/posts/p5_optical_illusion_example/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/posts/p5_optical_illusion_example/</guid>
-      <description>The following illusion is called Café Wall, it consists of simple elements as it is some black and white squares displayed inside parallel rows tricking our eyes to see not parallel rows as it actually is but evidencing a few slopped squares especially at the ends or sides of the rows. Here is part of the code used to make this visualization:
-function draw() { groutWidth = 139 / 25; background(&#39;#444444*2&#39;); numRows = ceil(1000 / (sqWidth)) + 1; for (let i = 0; i &amp;lt; numRows; i = i + 1) { line(0, i * sqWidth, 480, i * sqWidth); drawRow(i); } }    The following illusion is called Café Wall, it consists of simple elements as it is some black and white squares displayed inside parallel rows tricking our eyes to see not parallel rows as it actually is but evidencing a few slopped squares especially at the ends or sides of the rows.</description>
+      <description>--         Geometric and paradox Cafe Wall First we have the following illusion is called Café Wall, it i classified as a geometric illusion and it consists of simple elements as it is some black and white squares displayed inside parallel rows tricking our eyes to see not parallel rows as it actually is but evidencing a few slopped squares especially at the ends or sides of the rows.</description>
     </item>
     
   </channel>
