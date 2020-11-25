@@ -4,3 +4,13 @@ code.has-jax {
     border: none !important;
     font-size: 100%;
 }
+
+#gui_container{
+    position: relative;
+    top: -85px;
+    left: 555px;
+  }
+  #gui{
+    transform:translate(0%, 0%);
+  }
+  

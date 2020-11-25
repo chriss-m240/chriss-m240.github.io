@@ -52,5 +52,15 @@ With that is notorius that running convolutional mask on a software level is no 
       <description>--            Illusion Category Reference Type of interactivity(if applies) Base code URL(if applies)     Cafe wall Geometric https://en.wikipedia.org/wiki/Caf%C3%A9_wall_illusion Mouse movement X axis https://github.com/visual-comp/visual-comp.github.io/blob/master/js/illusions/cafeWall.js   Mobius strip Paradox https://www.illusionsindex.org/i/ambiguous-ring None https://github.com/visual-comp/visual-comp.github.io/blob/master/js/illusions/mobiusStrip.js   Penrose triangle Paradox https://en.wikipedia.org/wiki/Penrose_triangle Mouse click, Mouse movement X, Y axis https://github.com/visual-comp/visual-comp.github.io/blob/master/js/illusions/penroseTriangle.js   Muller lyer Size distorsion https://en.wikipedia.org/wiki/M%C3%BCller-Lyer_illusion None https://github.com/visual-comp/visual-comp.github.io/blob/master/js/illusions/mullerLyer.js   Ebbinghaus illusion Size distorsion https://en.</description>
     </item>
     
+    <item>
+      <title>Lab 3, Illumination scenes</title>
+      <link>/posts/p5_illumination/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/p5_illumination/</guid>
+      <description>Ambient light Ambient light is “background” light. It bounces everywhere in all directions and comes from no specific place. Ambient light illuminates every face of a model regardless of the face’s orientation to a light source. All faces get the same amount of ambient light.
+Ambient light is modeled as a three component vector, where each value represents a percentage of color that is visible.</description>
+    </item>
+    
   </channel>
 </rss>

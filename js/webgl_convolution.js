@@ -23,7 +23,8 @@ let hard_convolution = function(p5) {
   }
 
   p5.setup  = function() {
-    img = p5.loadImage("/images/rover.png"); 
+    img = p5.createCapture(p5.VIDEO);
+    // img = p5.loadImage("/images/rover.png"); 
 
     p5.createCanvas(319, 359, p5.WEBGL);
     p5.noStroke();

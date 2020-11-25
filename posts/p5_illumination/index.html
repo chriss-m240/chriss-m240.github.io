@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="robots" content="index, follow" />
+	<meta name="googlebot" content="index, follow, noarchive" />
+	<title>Visual Computing Course - Group site - Lab 3, Illumination scenes</title>
+	<link rel="icon" href="/" />
+	<meta name="description" content="" />
+
+	
+
+	<meta name="generator" content="Hugo 0.78.2" />
+
+	
+
+	<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Lab 3, Illumination scenes"/>
+<meta name="twitter:description" content="P5 also allow you to work with ligths, here is a look at it"/>
+
+	<meta property="og:title" content="Lab 3, Illumination scenes" />
+<meta property="og:description" content="P5 also allow you to work with ligths, here is a look at it" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/p5_illumination/" />
+
+
+
+	<meta property="og:locale" content="en" />
+	
+
+	
+	
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/bundle.min.css">
+</head>
+<body><header class="header ">
+    <div class="header__title">
+        <a href="/" class="header__title__link" alt="Home">
+            
+            Visual Computing Course - Group site
+            
+        </a>
+    </div>
+
+    <nav class="menu" aria-label="menu">
+    <ul class="menu__items" aria-label="menu">
+        
+        
+        <li class="menu__items__item" aria-label="Home">
+            <a href="/" class="menu__items__item__link "
+                alt="Home" role="menuitem">
+                Home
+            </a>
+        </li>
+        
+        <li class="menu__items__item" aria-label="Posts">
+            <a href="/posts/" class="menu__items__item__link "
+                alt="Posts" role="menuitem">
+                Posts
+            </a>
+        </li>
+        
+        <li class="menu__items__item" aria-label="About">
+            <a href="/about/" class="menu__items__item__link "
+                alt="About" role="menuitem">
+                About
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+    <nav class="hamburger-menu" aria-label="mobile-menu">
+    <div class="toggle">
+        <input type="checkbox" class="hamburger__toggle" id="hamburgerToggle" name="hamburger toggle" aria-label="Hamburguer menu">
+        <label class="hamburger__toggle__icon" for="hamburgerToggle">
+            <i class="fas fa-bars"></i>
+        </label>
+
+        <ul class="hamburger__items" aria-label="mobile-menu">
+            
+            <li class="hamburger__items__item" aria-label="Home">
+                <a href="/" class="hamburger__items__item__link" alt="Home" role="menuitem">
+                    Home
+                </a>
+            </li>
+            
+            <li class="hamburger__items__item" aria-label="Posts">
+                <a href="/posts/" class="hamburger__items__item__link" alt="Posts" role="menuitem">
+                    Posts
+                </a>
+            </li>
+            
+            <li class="hamburger__items__item" aria-label="About">
+                <a href="/about/" class="hamburger__items__item__link" alt="About" role="menuitem">
+                    About
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</nav>
+    
+</header>
+
+<article class="post">
+    <header class="post__header">
+        <h1 class="post__title">Lab 3, Illumination scenes</h1>
+        
+        <p class="post__subtitle">P5 also allow you to work with ligths, here is a look at it</p>
+        
+        
+        
+        
+    </header>
+
+    
+    <main class="post__body">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js" type="text/javascript"></script>
+<script src="/lib/jquery-1.8.3.min.js"></script>
+<script src="/lib/three.js"></script>
+<script src="/lib/Detector.js"></script>
+<script src="/lib/Coordinates.js"></script>
+<script src="/lib/OrbitAndPanControls.js"></script>
+<script src="/lib/TrackballControls.js"></script>
+<script src="/lib/uclass_TeapotGeometry.js"></script>
+<script src="/lib/uclass_TeacupGeometry.js"></script>
+<script src="/lib/uclass_TeaspoonGeometry.js"></script>
+<script src="/lib/uclass_BeveledBlockGeometry.js"></script>
+<script src="/lib/uclass_shaders.js"></script>
+<script src="/lib/stats.min.js"></script>
+<script src="/lib/dat.gui.min.js"></script>
+<script src="/lib/tween.min.js"></script>
+<script src="/lib/sprintf.js"></script>
+<script src="/js/illumination/1_ambient_sketch.js" type="module"></script>
+<script src="/js/illumination/3_fog_sketch.js" type="text/javascript"></script>
+<script src="/js/illumination/4_phong_sketch.js" type="text/javascript"></script>
+<script src="/js/illumination/6_shadow_sketch.js" type="text/javascript"></script>
+<script src="/js/illumination/6_shadow_sketch.js" type="module"></script>
+<link rel="stylesheet" href="/css/style.css"> 	</head>
+<h2 id="ambient-light">Ambient light</h2>
+<p>Ambient light is “background” light. It bounces everywhere in all directions and comes from no specific place. Ambient light illuminates every face of a model regardless of the face’s orientation to a light source. All faces get the same amount of ambient light.</p>
+<p>Ambient light is modeled as a three component vector, where each value represents a percentage of color that is visible. For example, the ambient “color” (0.2, 0.2, 0.2) means that 20% of an object’s color is visible, while (0.5, 0.5, 0.5) means that 50% of an object’s color is visible. The component values are typically all the same, but you can bring out one color over others by using independent values. An ambient “color” of (0.5, 0.1, 0.1) would give the impression that a scene has a red light source somewhere in the background.</p>
+<div id="canvasthreejs">
+  <div>
+    <canvas id="c" style="height: 500px; width: 800px;"></canvas>
+  </div>
+<div id="gui_container"></div>
+</div>
+<h2 id="fog-light">Fog light</h2>
+<p>The following is a simple example of how to use shaders in P5 to recreate a fog effect considering the following formula:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">gl_FragColor</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">mix</span>(<span style="color:#a6e22e">originalColor</span>, <span style="color:#a6e22e">fogColor</span>, <span style="color:#a6e22e">fogAmount</span>);
+</code></pre></div><p>Here is presented some code of the shaders:</p>
+<h2 id="vertex-shader">Vertex Shader</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">attribute vec3 aPosition;
+attribute vec2 aTexCoord;
+
+uniform mat4 uProjectionMatrix;
+uniform mat4 uModelViewMatrix;
+
+varying vec2 vTexCoord;
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>() {
+
+  vec4 positionVec4 <span style="color:#f92672">=</span> vec4(aPosition, <span style="color:#ae81ff">1.0</span>);
+
+  gl_Position <span style="color:#f92672">=</span> uProjectionMatrix <span style="color:#f92672">*</span> uModelViewMatrix <span style="color:#f92672">*</span> positionVec4;
+
+  vTexCoord <span style="color:#f92672">=</span> aTexCoord;
+}
+</code></pre></div><h2 id="fragment-shader">Fragment Shader</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">precision mediump <span style="color:#66d9ef">float</span>;
+
+varying vec2 vTexCoord;
+
+uniform vec4 u_fogColor;
+uniform <span style="color:#66d9ef">float</span> u_fogAmount;
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>() {
+  vec4 color <span style="color:#f92672">=</span> vec4(vTexCoord.x, vTexCoord.y, <span style="color:#ae81ff">1.0</span>, <span style="color:#ae81ff">1.0</span>);
+  gl_FragColor <span style="color:#f92672">=</span> mix(color, u_fogColor, u_fogAmount);  
+}
+</code></pre></div><p>Play with the canvas changing the intensity of the fog with the slider:</p>
+<div id="fog"> </div>
+<h2 id="phong-combining-ambient-diffused-and-specular-lights"><strong>Phong</strong>, combining ambient, diffused and specular lights</h2>
+<p>Lighting in the real world is extremely complicated and depends on way too many factors, something we can&rsquo;t afford to calculate on the limited processing power we have. Lighting in OpenGL is therefore based on approximations of reality using simplified models that are much easier to process and look relatively similar. These lighting models are based on the physics of light as we understand it. One of those models is called the Phong lighting model. The major building blocks of the Phong lighting model consist of 3 components: ambient, diffuse and specular lighting. Below you can see what these lighting components look like on their own and combined:</p>
+<p><img src="https://i.imgur.com/HzbJYMu.png" alt=""></p>
+<p>Here is the implementation we did:</p>
+<div id="phong"> </div>
+<h2 id="shadow-maping">Shadow maping</h2>
+<p>In both Egyptian and Greek mythology, it’s said that art was invented by someone tracing the
+shadow of a person on a cave wall. Shadows give a scene more realism and solidity. An object’s
+shadow firmly establishes its location in relation to its surroundings.</p>
+<p><img src="https://i.imgur.com/FLFhHwK.png" alt=""></p>
+<p>Rasterization is focused on triangles rendered from the eye, so we have to work a bit to generate
+shadows. One popular method of adding these is called shadow mapping. This algorithm
+dates way back, it was first described by Lance Williams in 1978. The idea is to render the
+scene from the point of view of the light. Whatever the light “sees” is what gets lit. Remember
+our firefly with human eyeballs? This is where that answer comes into play. If a light doesn’t see
+a surface, that means the surface is in shadow.</p>
+<div id="container">
+</div>
+
+    </main>
+    
+
+    
+    <footer class="post__footer">
+        
+
+    </footer>
+    
+</article>
+<footer class="footer">
+  
+
+  <address class="footer__contact">
+      
+
+      
+
+      
+
+      
+  </address>
+
+  <div class="copy">
+      
+      <p>© 2020 - Visual Computing Course - Group site</p>
+      
+  </div>
+
+  
+
+
+
+
+<script src="/js/bundle.min.243a483d5297388ef2f4a1b2d5e5d30218e01e8a2dfe213a376ea24d130837c860762a23e9daaa68ae3a7bcd5a3869287a14dc3b738f10486cf4e8fb4291b478.js"></script>
+
+
+
+
+
+
+
+<script
+	defer
+	src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5&#43;&#43;eIfzYmTgBBmXYdhvxPc&#43;XcFEk&#43;zJwDgWbP"
+	crossorigin="anonymous"
+></script>
+
+
+  
+</footer></body>
+
+</html>
