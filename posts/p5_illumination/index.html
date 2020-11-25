@@ -140,6 +140,7 @@
 <script src="/lib/tween.min.js"></script>
 <script src="/lib/sprintf.js"></script>
 <script src="/js/illumination/1_ambient_sketch.js" type="module"></script>
+<script src="/js/illumination/2_attenuation_sketch.js" type="text/javascript"></script>
 <script src="/js/illumination/3_fog_sketch.js" type="text/javascript"></script>
 <script src="/js/illumination/4_phong_sketch.js" type="text/javascript"></script>
 <script src="/js/illumination/6_shadow_sketch.js" type="text/javascript"></script>
@@ -154,6 +155,10 @@
   </div>
 <div id="gui_container"></div>
 </div>
+<h2 id="ligth-attenuation">Ligth attenuation</h2>
+<p>Light becomes weaker the further is travels from its source. In the physical world the attenuation is proportional to 1/d2, where d is the distance between the light source and an object. Using the function 1/d2 causes light to decrease very rapidly and so it is common to make attenuation be proportional to 1/d. Notice that if d is greater than 1, both equations calculate a fraction between 0.0 and 1.0. Attenuation simply calculates a percentage of the original light that is used to color a pixel.</p>
+<div id="attenuation"> </div>
+<p>Here is the code running on the editor of P5js, <a href="https://editor.p5js.org/jdbarraganm/sketches/6VG2-Wxas">https://editor.p5js.org/jdbarraganm/sketches/6VG2-Wxas</a></p>
 <h2 id="fog-light">Fog light</h2>
 <p>The following is a simple example of how to use shaders in P5 to recreate a fog effect considering the following formula:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">gl_FragColor</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">mix</span>(<span style="color:#a6e22e">originalColor</span>, <span style="color:#a6e22e">fogColor</span>, <span style="color:#a6e22e">fogAmount</span>);
