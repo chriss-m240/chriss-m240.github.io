@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="robots" content="index, follow" />
+	<meta name="googlebot" content="index, follow, noarchive" />
+	<title>Visual Computing Course - Group site - NeRF - Neural Radiance Fields</title>
+	<link rel="icon" href="/" />
+	<meta name="description" content="" />
+
+	
+
+	<meta name="generator" content="Hugo 0.79.0" />
+
+	
+
+	<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="NeRF - Neural Radiance Fields"/>
+<meta name="twitter:description" content="Here is presented NERF as part of a research project for Visual Computing course"/>
+
+	<meta property="og:title" content="NeRF - Neural Radiance Fields" />
+<meta property="og:description" content="Here is presented NERF as part of a research project for Visual Computing course" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/project/" />
+
+
+
+	<meta property="og:locale" content="en" />
+	
+
+	
+	
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/bundle.min.css">
+</head>
+<body><header class="header ">
+    <div class="header__title">
+        <a href="/" class="header__title__link" alt="Home">
+            
+            Visual Computing Course - Group site
+            
+        </a>
+    </div>
+
+    <nav class="menu" aria-label="menu">
+    <ul class="menu__items" aria-label="menu">
+        
+        
+        <li class="menu__items__item" aria-label="Home">
+            <a href="/" class="menu__items__item__link "
+                alt="Home" role="menuitem">
+                Home
+            </a>
+        </li>
+        
+        <li class="menu__items__item" aria-label="Posts">
+            <a href="/posts/" class="menu__items__item__link "
+                alt="Posts" role="menuitem">
+                Posts
+            </a>
+        </li>
+        
+        <li class="menu__items__item" aria-label="About">
+            <a href="/about/" class="menu__items__item__link "
+                alt="About" role="menuitem">
+                About
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+    <nav class="hamburger-menu" aria-label="mobile-menu">
+    <div class="toggle">
+        <input type="checkbox" class="hamburger__toggle" id="hamburgerToggle" name="hamburger toggle" aria-label="Hamburguer menu">
+        <label class="hamburger__toggle__icon" for="hamburgerToggle">
+            <i class="fas fa-bars"></i>
+        </label>
+
+        <ul class="hamburger__items" aria-label="mobile-menu">
+            
+            <li class="hamburger__items__item" aria-label="Home">
+                <a href="/" class="hamburger__items__item__link" alt="Home" role="menuitem">
+                    Home
+                </a>
+            </li>
+            
+            <li class="hamburger__items__item" aria-label="Posts">
+                <a href="/posts/" class="hamburger__items__item__link" alt="Posts" role="menuitem">
+                    Posts
+                </a>
+            </li>
+            
+            <li class="hamburger__items__item" aria-label="About">
+                <a href="/about/" class="hamburger__items__item__link" alt="About" role="menuitem">
+                    About
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</nav>
+    
+</header>
+
+<article class="post">
+    <header class="post__header">
+        <h1 class="post__title">NeRF - Neural Radiance Fields</h1>
+        
+        <p class="post__subtitle">Here is presented NERF as part of a research project for Visual Computing course</p>
+        
+        
+        
+        
+    </header>
+
+    
+    <main class="post__body">
+        <h2 id="ray-tracing">Ray tracing</h2>
+<p>In 3D computer graphics, ray tracing is a rendering technique for generating an image by tracing the path of light as pixels in an image plane and simulating the effects of its encounters with virtual objects. The technique is capable of producing a high degree of visual realism, more so than typical scanline rendering methods, <strong>but at a greater computational cost</strong>. This makes ray tracing best suited for applications where taking a relatively long time to render can be tolerated, such as in still computer-generated images, and film and television visual effects (VFX), but more poorly suited to real-time applications such as video games, where speed is critical in rendering each frame.
+<img src="https://i.imgur.com/nKMDuW3.jpg" alt="">
+Ray tracing is capable of simulating a variety of optical effects, such as reflection and refraction, scattering, and dispersion phenomena (such as chromatic aberration).
+<img src="https://i.imgur.com/EHf4o9W.jpg" alt=""></p>
+<p><strong>Limitations</strong></p>
+<p>A serious disadvantage of ray tracing is performance (though it can in theory be faster than traditional scanline rendering depending on scene complexity vs. number of pixels on-screen). Until the late 2010s, ray tracing in real time was usually considered impossible on consumer hardware for nontrivial tasks.</p>
+<h2 id="volume-ray-marching">Volume Ray Marching</h2>
+<p>The volume ray marching or also call Volume Ray Casting is a rendering technique that differs from Ray Tracing because instead of the ray is reflected by the surface of the object, in Volume Ray Marching the ray goes through the tridimensional object.</p>
+<p>When talking about VolumeRay Marching, is important to take into consideration two concepts:</p>
+<ul>
+<li>
+<p><strong>Voxel:</strong>: A voxel can be understood as an extrapolation of the concept of a pixel for 2D graphics. A voxel is the minimum cubic unit for a tridimensional object that stores information like the coordinates and for rendering the color and even more depending on the use case.</p>
+</li>
+<li>
+<p><strong>Transfer Function:</strong> Is a color assignation function that given some input it is responsible to return a color for the given voxel, it generally receives information like the coordinates (x, y z) but it may receive other parameters such as the distance between the voxel and in order work around a better color assignation.</p>
+</li>
+</ul>
+<p><img src="https://i.imgur.com/5FbfjIE.png" alt=""></p>
+<p><strong>Limitations</strong></p>
+<p>Taking into account the algorithmic nature of the Volume Ray Tracing technique there are some limitations:</p>
+<ul>
+<li>
+<p>One of them is the need to store all the volumetric data of an object so it can be processed by this technique</p>
+</li>
+<li>
+<p>Another one is the need for a great processing capacity because by going through the object with the generated rays the number of rays to cover the whole scene increases so there have to be more calculations to render properly a scene.</p>
+</li>
+</ul>
+<h2 id="photogrammetry">Photogrammetry</h2>
+<p>Working our way to NERF, we found a technique with similar results called photogrammetry that focus on reconstructing geometrys from photos. Normally used in geography to 3D model terrains and studies them.</p>
+<p>One of the main problems with photogrametry is the difficulty of understaing 3D geommetries for objects with shining or reflective surfaces, forcing the user to work around that difficulty covering the surface in order to dismmis the shineness, something that NERF is able to understand very well.</p>
+<p><img src="https://i.imgur.com/hg8wcgq.jpg" alt=""></p>
+<h2 id="nerf">NERF</h2>
+<p>NeRF Model represents a scene using a fully-connected (non-convolutional) deep network, whose input is a single continuous 5D coordinate (spatial location (x, y, z) and viewing direction (θ, φ)) and whose output is the volume density and view-dependent emitted radiance at that spatial location.</p>
+<p><strong>Limitations</strong></p>
+<p>The biggest problem of NeRF model is that is actually View-Dependent Appearance, meaning that it fits ther volume just as the physical (Color, Shaders and Bright) of the Data, because of this, it doesnt generalize the 3D Model but all the scene, that in some scenarios is not the expected behaviour</p>
+<p><strong>Advantages</strong></p>
+<p>And the advantage is that we can mix NeRF with other models in order to have a better generalization of the 3D object, without having included the scence data that we dont want to have in the 3D final object</p>
+<blockquote>
+<p>In order to get the last results we used as a basis code the next repositories:</p>
+<p><a href="https://github.com/kwea123/nerf_pl">https://github.com/kwea123/nerf_pl</a></p>
+<p><a href="https://github.com/bmild/nerf">https://github.com/bmild/nerf</a></p>
+<p>All the credits to their authors</p>
+</blockquote>
+<h2 id="proof-of-concept">Proof of concept</h2>
+<p>The following visualization is a proof of concept done with the basis code referenced before, and using a  Pokemon figure of one of our team members.</p>
+<p><img src="https://i.imgur.com/io0iHbM.gif" alt=""></p>
+<h2 id="references">References</h2>
+<ul>
+<li>Dot CSV, ¿Es NeRF el Futuro de los Gráficos en Tiempo Real?: <a href="https://www.youtube.com/watch?v=IKFmxP2HLXs">https://www.youtube.com/watch?v=IKFmxP2HLXs</a></li>
+<li>Dot CSV, IA Aprende a Generar ESCENAS 3D Hiperrealistas Usando Fotos: <a href="https://www.youtube.com/watch?v=d35Yjz_tpBA">https://www.youtube.com/watch?v=d35Yjz_tpBA</a></li>
+<li>Andrey Lebrov, RAY TRACING and other RENDERING METHODS: <a href="https://www.youtube.com/watch?v=LAsnQoBUG4Q&amp;t">https://www.youtube.com/watch?v=LAsnQoBUG4Q&amp;t</a></li>
+</ul>
+
+    </main>
+    
+
+    
+    <footer class="post__footer">
+        
+
+    </footer>
+    
+</article>
+<footer class="footer">
+  
+
+  <address class="footer__contact">
+      
+
+      
+
+      
+
+      
+  </address>
+
+  <div class="copy">
+      
+      <p>© 2020 - Visual Computing Course - Group site</p>
+      
+  </div>
+
+  
+
+
+
+
+<script src="/js/bundle.min.243a483d5297388ef2f4a1b2d5e5d30218e01e8a2dfe213a376ea24d130837c860762a23e9daaa68ae3a7bcd5a3869287a14dc3b738f10486cf4e8fb4291b478.js"></script>
+
+
+
+
+
+
+
+<script
+	defer
+	src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5&#43;&#43;eIfzYmTgBBmXYdhvxPc&#43;XcFEk&#43;zJwDgWbP"
+	crossorigin="anonymous"
+></script>
+
+
+  
+</footer></body>
+
+</html>
